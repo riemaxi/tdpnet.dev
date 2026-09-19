@@ -1,10 +1,19 @@
 const config = require('./config')
 
+class Manager extends require('./manager'){
+    constructor(){
+        super()
+    }
+}
+
 class SP extends require('./network').SP{
     constructor(handle){
         super(config.ponpin)
 
         this.handle = handle
+
+        this.manager = new Manager()
+
     }
 
    onConnected(){
