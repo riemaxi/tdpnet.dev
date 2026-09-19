@@ -205,3 +205,14 @@ message-editor::part(send-btn):hover {
   border-left-color: #38bdf8;
   transform: scale(1.08);
 }
+
+#dashboard {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+}
+
+#lobby{
+    width: 100vw;
+    height: 100vh;
+}
