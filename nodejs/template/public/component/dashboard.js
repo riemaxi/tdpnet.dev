@@ -1,5 +1,4 @@
 import { Component } from './base.js';
-import { InnerComponent } from './inner-component.js';
 
 export class Dashboard extends Component {
   constructor() {
@@ -19,7 +18,7 @@ export class Dashboard extends Component {
   render() {
     this.shadowRoot.innerHTML = `
       <div part="dashboard-wrapper">
-        <inner-component id="component"></inner-component>
+        <inner-component id="component" exportparts="container, action-btn"></inner-component>
       </div>
     `;
     this.listen();

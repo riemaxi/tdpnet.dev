@@ -1,4 +1,4 @@
-    import { Component } from './base.js';
+import { Component } from './base.js';
 
 export class InnerComponent extends Component {
   constructor() {
