@@ -40,7 +40,7 @@ main-dashboard::part(dashboard-wrapper) {
 
 /* Header styling */
 chat-header { grid-area: header; }
-chat-header::part(container) {
+main-dashboard::part(header-container) {
   background: rgba(30, 41, 59, 0.7);
   backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -50,22 +50,22 @@ chat-header::part(container) {
   justify-content: space-between;
   align-items: center;
 }
-chat-header::part(branding) {
+main-dashboard::part(header-branding) {
   display: flex;
   align-items: center;
   gap: 12px;
 }
-chat-header::part(logo) {
+main-dashboard::part(header-logo) {
   width: 24px;
   height: 24px;
   background: linear-gradient(135deg, #0ea5e9, #0284c7);
   border-radius: 6px;
 }
-chat-header::part(username) {
+main-dashboard::part(header-username) {
   font-weight: 700;
   color: #f8fafc;
 }
-chat-header::part(signoff-btn) {
+main-dashboard::part(header-signoff-btn) {
   background: rgba(239, 68, 68, 0.2);
   color: #fca5a5;
   border: 1px solid rgba(239, 68, 68, 0.4);
@@ -75,14 +75,14 @@ chat-header::part(signoff-btn) {
   font-weight: 600;
   transition: all 0.2s;
 }
-chat-header::part(signoff-btn):hover {
+main-dashboard::part(header-signoff-btn):hover {
   background: rgba(239, 68, 68, 0.4);
   color: #fff;
 }
 
 /* Peer List styling */
 peer-list { grid-area: peers; }
-peer-list::part(container) {
+main-dashboard::part(peers-container) {
   background: rgba(30, 41, 59, 0.7);
   backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -95,15 +95,15 @@ peer-list::part(container) {
   gap: 12px;
   overflow-y: auto;
 }
-peer-list::part(title) {
+main-dashboard::part(peers-title) {
   font-weight: 800;
   letter-spacing: 1px;
   text-transform: uppercase;
   font-size: 0.85rem;
   color: #94a3b8;
 }
-peer-list::part(select-all-item),
-peer-list::part(peer-item) {
+main-dashboard::part(peers-select-all-item),
+main-dashboard::part(peers-peer-item) {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -113,16 +113,16 @@ peer-list::part(peer-item) {
   border-radius: 6px;
   transition: background 0.15s;
 }
-peer-list::part(peer-item):hover {
+main-dashboard::part(peers-peer-item):hover {
   background: rgba(255, 255, 255, 0.05);
 }
-peer-list::part(checkbox) {
+main-dashboard::part(peers-checkbox) {
   accent-color: #0ea5e9;
   width: 16px;
   height: 16px;
   cursor: pointer;
 }
-peer-list::part(list) {
+main-dashboard::part(peers-list) {
   display: flex;
   flex-direction: column;
   gap: 6px;
@@ -130,7 +130,7 @@ peer-list::part(list) {
 
 /* Message List styling */
 message-list { grid-area: messages; }
-message-list::part(container) {
+main-dashboard::part(messages-container) {
   background: rgba(30, 41, 59, 0.7);
   backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -143,24 +143,24 @@ message-list::part(container) {
   flex-direction: column;
   gap: 10px;
 }
-message-list::part(empty-state) {
+main-dashboard::part(messages-empty-state) {
   color: #64748b;
   font-style: italic;
   margin: auto;
 }
-message-list::part(msg) {
+main-dashboard::part(messages-msg) {
   padding: 10px 14px;
   border-radius: 10px;
   max-width: 75%;
   background: #334155;
   color: #f1f5f9;
 }
-message-list::part(msg-self) {
+main-dashboard::part(messages-msg-self) {
   align-self: flex-end;
   background: linear-gradient(135deg, #0ea5e9, #0284c7);
   color: #ffffff;
 }
-message-list::part(msg-author) {
+main-dashboard::part(messages-msg-author) {
   font-size: 0.75rem;
   opacity: 0.8;
   margin-bottom: 2px;
@@ -168,7 +168,7 @@ message-list::part(msg-author) {
 
 /* Message Editor styling */
 message-editor { grid-area: editor; }
-message-editor::part(container) {
+main-dashboard::part(editor-container) {
   background: rgba(30, 41, 59, 0.7);
   backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -178,7 +178,7 @@ message-editor::part(container) {
   align-items: center;
   gap: 12px;
 }
-message-editor::part(input) {
+main-dashboard::part(editor-input) {
   flex: 1;
   background: transparent;
   border: none;
@@ -189,7 +189,7 @@ message-editor::part(input) {
   height: 36px;
   font-family: inherit;
 }
-message-editor::part(send-btn) {
+main-dashboard::part(editor-send-btn) {
   background: transparent;
   border: none;
   cursor: pointer;
@@ -201,18 +201,19 @@ message-editor::part(send-btn) {
   padding: 0;
   transition: border-left-color 0.2s, transform 0.1s;
 }
-message-editor::part(send-btn):hover {
+main-dashboard::part(editor-send-btn):hover {
   border-left-color: #38bdf8;
   transform: scale(1.08);
 }
 
 #dashboard {
-    display: none;
+    _display: none;
     width: 100vw;
     height: 100vh;
 }
 
 #lobby{
+  display: none;
     width: 100vw;
     height: 100vh;
 }
