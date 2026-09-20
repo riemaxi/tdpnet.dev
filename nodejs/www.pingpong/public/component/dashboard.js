@@ -1,8 +1,4 @@
 import { Component } from './base.js';
-import './header.js';
-import './peers.js';
-import './messages.js';
-import './editor.js';
 
 export class Dashboard extends Component {
   get chatHeader() { return this.get('header'); }
