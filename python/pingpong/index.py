@@ -6,7 +6,7 @@ from system import System
 
 class Application(System):
     def __init__(self):
-        super().__init__(config['ponpin'])
+        super().__init__(config['ponpin'], connect=False)
 
     def on_denied(self, data):
         print('denied', data)
@@ -51,4 +51,3 @@ async def main():
 
 if __name__ == '__main__':
     asyncio.run(main())
-    
