@@ -1,0 +1,18 @@
+# CMake build output directory
+build/
+
+# Compilation artifacts
+*.o
+*.obj
+*.a
+*.lib
+*.so
+*.dylib
+*.dll
+
+# CMake generated files (in case cmake is run outside build/)
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+compile_commands.json

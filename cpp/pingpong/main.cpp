@@ -77,8 +77,9 @@ private:
 };
 
 int main() {
-    ix::initNetSystem();
-
+    // IXWebSocket manages socket library initialization automatically on modern platforms.
+    // Calling initNetSystem() or uninitNetSystem() is no longer required.
+    
     Application app;
     app.connect(app.get_host(), app.get_ssl());
 
@@ -87,6 +88,5 @@ int main() {
         std::this_thread::sleep_for(std::chrono::seconds(1));
     }
 
-    ix::uninitNetSystem();
     return 0;
 }
