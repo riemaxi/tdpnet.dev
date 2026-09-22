@@ -1,5 +1,10 @@
 const config = require('./config')
 
+const trailers = {
+    sum : '0|5.3|x+y',
+    prod : '0|5.3|x*y',
+}
+
 new class extends require('./system'){
     constructor(){
         super(config.ponpin)
@@ -31,9 +36,11 @@ new class extends require('./system'){
     }
 
     onRequest(id, packet){
+        const data = JSON.parse(packet.transformation.data)
         console.log('request', id, Date.now())
         switch(id){
             case 'pong': setTimeout(() => this.response(packet, 'ping', 1), 1000); break;
+            case 'sum' : this.response(packet, id, trailers.sum.replace('x', data.x).replace('y', data.y)); break;
         }
 
     }
