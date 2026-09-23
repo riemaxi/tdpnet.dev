@@ -207,12 +207,13 @@ main-dashboard::part(editor-send-btn):hover {
 }
 
 #dashboard {
-    display: none;
+    _display: none;
     width: 100vw;
     height: 100vh;
 }
 
 #lobby{
+    display: none;
     width: 100vw;
     height: 100vh;
 }
