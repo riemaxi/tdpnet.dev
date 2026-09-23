@@ -10,3 +10,6 @@ futures-util = "0.3"
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
 hex = "0.4"
+
+# Pin idna_adapter to avoid 1.2.2 (which requires Rust 2024 Edition)
+idna_adapter = "=1.2.0"
