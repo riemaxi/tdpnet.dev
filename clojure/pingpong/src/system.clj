@@ -6,7 +6,6 @@
 (defn connect-system [config handlers]
   (let [host (get config :host)
         credential (get config :credential {})
-        socket-atom (atom nil)
         
         on-msg (fn [msg-str]
                  (try
@@ -23,14 +22,12 @@
                      (println "Error parsing message:" (.getMessage e) "Raw msg:" msg-str))))
         
         socket (ws/connect host
-                           :on-connect (fn [_raw-session]
-                                         ;; Send signin message via the wrapped gniazdo socket atom
-                                         (when-let [s @socket-atom]
-                                           (tdp/send-json! s "signin" credential)))
                            :on-receive on-msg
                            :on-close (fn [code reason]
                                        (println "WebSocket Closed:" code reason))
                            :on-error (fn [e] 
                                        (println "WebSocket Error:" (.getMessage e))))]
-    (reset! socket-atom socket)
+    
+    ;; Send signin payload now that socket instance is assigned
+    (tdp/send-json! socket "signin" credential)
     socket))

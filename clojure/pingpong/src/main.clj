@@ -8,7 +8,7 @@
   {:ponpin {:host "ws://213.199.58.37:5000"
             :credential {:accesskey "PONPIN"
                          :password "000000"
-                         :address "samuel.aladino.maya.4da"
+                         :address "ponpin.aladino.maya.4da"
                          :context {}}
             :peers {:pinpon "pinpon.aladino.maya.4da"}}})
 
