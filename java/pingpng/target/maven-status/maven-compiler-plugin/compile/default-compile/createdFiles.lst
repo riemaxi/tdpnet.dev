@@ -1,4 +1,5 @@
 Packet$Transformer.class
+Main.class
 Packet$BitVector.class
 Packet$Channel.class
 SystemNode$SessionHandler.class
