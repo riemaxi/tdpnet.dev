@@ -1,3 +1,4 @@
 {
-    "cmake.sourceDirectory": "/home/samuel/repo/tdpnet.dev/cpp/pingpong"
+    "cmake.sourceDirectory": "/home/samuel/repo/tdpnet.dev/cpp/pingpong",
+    "java.configuration.updateBuildConfiguration": "interactive"
 }
