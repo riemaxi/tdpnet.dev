@@ -1,5 +1,5 @@
 module.exports = {
-    ponpin: {
+    main: {
         host: 'ws://213.199.58.37:5000', 
         credential: {
                 accesskey: 'PONPIN',

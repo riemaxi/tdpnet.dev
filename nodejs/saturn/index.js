@@ -2,7 +2,7 @@ const config = require('./config')
 
 new class extends require('./system'){
     constructor(){
-        super(config.ponpin)
+        super(config.main)
     }
 
     onDenied(data){
@@ -11,8 +11,7 @@ new class extends require('./system'){
 
     onGranted(data){
         console.log('granted', data)
-        const formula = [[1, -2], [3]]
-        this.request(this.address, this.peers.saturn,'solve', formula)
+        this.testSolveX()
     }
 
     onEvent(id, packet){
@@ -26,6 +25,8 @@ new class extends require('./system'){
         console.log('response', id, Date.now())
         switch(id){
             case 'saturn-solution': console.log(packet.transformer.data) ; break;
+            case 'saturn-solution-x': console.log(packet.transformer.data) ; break;
+
         }
     }
 
@@ -33,6 +34,17 @@ new class extends require('./system'){
         console.log('request', id, Date.now())
         switch(id){
         }
+    }
 
+    testSolve(){
+        const formula = [[1, -2], [3]]
+        const toke = crypto.randomUUID()
+        this.request(this.address, this.peers.saturn,'solve', formula)
+    }
+
+    testSolveX(){
+        const formula = [[1, -2], [3]]
+        const token = crypto.randomUUID()
+        this.request(this.address, this.peers.saturn,'solve-x', {token, formula})
     }
 }
